@@ -3,6 +3,7 @@ package com.SpringAutomation.TestCaseRegression.Controller;
 import com.SpringAutomation.TestCaseRegression.Client.LLMClient;
 import com.SpringAutomation.TestCaseRegression.Model.DefectRecord;
 import com.SpringAutomation.TestCaseRegression.Service.ExcelService;
+import com.SpringAutomation.TestCaseRegression.Service.GeminiService;
 import com.SpringAutomation.TestCaseRegression.Service.LLMService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +21,12 @@ public class DefectController {
 
     private final ExcelService excelService;
     private final LLMService llmService;
+    private final GeminiService geminiService;
 
-    public DefectController(ExcelService excelService, LLMService llmService) {
+    public DefectController(ExcelService excelService, LLMService llmService, GeminiService geminiService) {
         this.excelService = excelService;
         this.llmService = llmService;
+        this.geminiService=geminiService;
     }
 
     @GetMapping("/analyze")
@@ -35,7 +38,7 @@ public class DefectController {
         String  prompt= llmService.getAffectedTestCases(description, records);
         System.out.println("Calling LLM CLIENT...");
 
-        String llmResponse = LLMClient.queryLLM(prompt);
+        String llmResponse = geminiService.queryLLM(prompt);
         System.out.println("This is the LLM response");
         System.out.println(llmResponse);
         return;
