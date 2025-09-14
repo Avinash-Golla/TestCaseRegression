@@ -7,6 +7,8 @@ import com.google.genai.types.GenerateContentResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GeminiService {
 
@@ -19,7 +21,6 @@ public class GeminiService {
 
     public String queryLLM(String prompt)
     {
-        Client client = Client.builder().apiKey("AIzaSyAD4Kq1_ExrBWDJEZVydeOvKMVOH6drRGQ").build();
 
         GenerateContentResponse response =
                 client.models.generateContent(

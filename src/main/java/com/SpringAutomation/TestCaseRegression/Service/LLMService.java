@@ -30,7 +30,7 @@ public class LLMService {
         String prompt = "Given the following defect-testcase mapping:\n"
                         +context
                         +"\n\nQuestion: Which test cases are affected  by this defect: \""
-                        +defectDescription+"\"?\n\nRespond with testcase IDs only.";
+                        +defectDescription+"\"?\n\nRespond with testcase IDs only in the form of arrayList ";
         System.out.println("This is the prompt"+ prompt);
         return prompt;
     }
