@@ -8,6 +8,8 @@ public class TestCaseRegressionApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TestCaseRegressionApplication.class, args);
+		System.out.println("Classpath:");
+		System.out.println(System.getProperty("java.class.path"));
 	}
 
 }

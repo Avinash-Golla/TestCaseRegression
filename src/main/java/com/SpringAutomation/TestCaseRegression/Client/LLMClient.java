@@ -10,6 +10,10 @@ import java.time.Duration;
 @Component
 public class LLMClient {
 
+//    Java API: AIzaSyAD4Kq1_ExrBWDJEZVydeOvKMVOH6drRGQ
+//
+//    GitHub pAT: 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
+
 
     private static final String API_URL = "http://localhost:5005/query";
 

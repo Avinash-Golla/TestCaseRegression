@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Base64;
 import java.util.Map;
 
@@ -51,18 +52,19 @@ public class GitHubService {
         throw new RuntimeException("Failed to fetch file: "+response.getStatusCode());
 
     }
-
-    public Path saveFile(String fileName, String content) throws IOException
+    public Path saveFile(String relativepath , String content) throws IOException
     {
-        Path downloadDir= Paths.get("downloaded-scripts");
-        if(!Files.exists(downloadDir))
+        Path downloadDir= Paths.get(relativepath);
+        if(downloadDir.getParent()!=null)
         {
-            Files.createDirectories(downloadDir);
+            Files.createDirectories(downloadDir.getParent());
         }
-        Path filePath = downloadDir.resolve(fileName);
-        Files.writeString(filePath,content, StandardCharsets.UTF_8);
-        return filePath;
+
+
+        return Files.writeString(downloadDir,content, StandardOpenOption.CREATE,StandardOpenOption.TRUNCATE_EXISTING);
     }
+
+
 
 
 }
