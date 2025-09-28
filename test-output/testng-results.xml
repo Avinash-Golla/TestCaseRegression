@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-28T10:22:38 IST" name="RegressionSuite" finished-at="2025-09-28T10:22:38 IST" duration-ms="28">
+    <groups>
+    </groups>
+    <test started-at="2025-09-28T10:22:38 IST" name="AffectedTests" finished-at="2025-09-28T10:22:38 IST" duration-ms="28">
+      <class name="com.myTests.tests.TC004">
+        <test-method signature="testcase004()[pri:0, instance:com.myTests.tests.TC004@1fd52674]" started-at="2025-09-28T10:22:38 IST" name="testcase004" finished-at="2025-09-28T10:22:38 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase004 -->
+      </class> <!-- com.myTests.tests.TC004 -->
+      <class name="com.myTests.tests.TC009">
+        <test-method signature="testcase009()[pri:0, instance:com.myTests.tests.TC009@5c475c7f]" started-at="2025-09-28T10:22:38 IST" name="testcase009" finished-at="2025-09-28T10:22:38 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase009 -->
+      </class> <!-- com.myTests.tests.TC009 -->
+    </test> <!-- AffectedTests -->
+  </suite> <!-- RegressionSuite -->
+</testng-results>
